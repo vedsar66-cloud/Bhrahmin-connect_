@@ -18,7 +18,7 @@ import {
   Briefcase
 } from 'lucide-react';
 import { useAuth } from './useAuth';
-import { GOTRAS_LIST, VILLAGES_LIST } from '../lib/mockData';
+import { GOTRAS_LIST, VILLAGES_LIST } from './lib/mockData';
 import { BloodGroup } from '../types';
 import { AvatarUpload } from '../components/AvatarUpload';
 
