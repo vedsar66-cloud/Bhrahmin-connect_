@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { X, User, Phone, MapPin, Heart, Briefcase, Plus, Trash2 } from 'lucide-react';
 import { DirectoryMember, BloodGroup, FamilyMember } from '../types';
-import { GOTRAS_LIST, VILLAGES_LIST } from '../lib/mockData';
+import { GOTRAS_LIST, VILLAGES_LIST } from './lib/mockData';
 import { AvatarUpload } from './AvatarUpload';
 
 interface AddMemberModalProps {
