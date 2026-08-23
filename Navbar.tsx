@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Globe, Heart, Bell, ShieldCheck, Download } from 'lucide-react';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from './useAuth';
 
 interface NavbarProps {
   onOpenSOS: () => void;
