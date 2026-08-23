@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { X, Heart, Send, AlertTriangle, Building2, Phone, User, CheckCircle2 } from 'lucide-react';
 import { BloodGroup, BloodRequest } from '../types';
-import { VILLAGES_LIST } from '../lib/mockData';
+import { VILLAGES_LIST } from './lib/mockData';
 
 interface EmergencySOSModalProps {
   isOpen: boolean;
