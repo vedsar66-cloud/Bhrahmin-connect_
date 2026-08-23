@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import { BloodDonor, BloodGroup, BloodRequest } from '../types';
 import { SkeletonDonorCard } from './SkeletonLoader';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from './useAuth';
 
 interface BloodBankViewProps {
   donors: BloodDonor[];
