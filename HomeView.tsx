@@ -16,7 +16,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { ActiveTab, Announcement, BloodRequest } from '../types';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from './useAuth';
 
 interface HomeViewProps {
   setActiveTab: (tab: ActiveTab) => void;
