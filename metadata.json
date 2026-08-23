@@ -1,0 +1,6 @@
+{
+  "name": "Samaj Setu - Community Network",
+  "description": "Bilingual (English & Gujarati) Community Networking PWA with Member Directory, Blood Bank, and Business Network.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
