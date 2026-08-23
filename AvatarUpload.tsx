@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Camera, UploadCloud, CheckCircle2, AlertCircle, RefreshCw, Sparkles, X } from 'lucide-react';
-import { compressImage, uploadToCloudinary, CompressionResult } from '../lib/cloudinary';
+import { compressImage, uploadToCloudinary, CompressionResult } from './lib/cloudinary';
 
 interface AvatarUploadProps {
   currentAvatarUrl?: string;
