@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { X, Mail, Lock, User, MapPin, Heart, Shield, Check, Sparkles } from 'lucide-react';
 import { useAuth } from './useAuth';
-import { GOTRAS_LIST, VILLAGES_LIST } from '../lib/mockData';
+import { GOTRAS_LIST, VILLAGES_LIST } from './lib/mockData';
 import { BloodGroup } from '../types';
 
 interface AuthModalProps {
