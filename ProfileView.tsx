@@ -20,7 +20,7 @@ import {
 import { useAuth } from './useAuth';
 import { GOTRAS_LIST, VILLAGES_LIST } from './lib/mockData';
 import { BloodGroup } from '../types';
-import { AvatarUpload } from '../components/AvatarUpload';
+import { AvatarUpload } from './AvatarUpload';
 
 interface ProfileViewProps {
   onOpenAuth: () => void;
