@@ -15,7 +15,7 @@ import {
   Building2
 } from 'lucide-react';
 import { Business, BusinessCategory } from '../types';
-import { SkeletonBusinessCard } from '../components/SkeletonLoader';
+import { SkeletonBusinessCard } from './components/SkeletonLoader';
 
 interface BusinessViewProps {
   businesses: Business[];
