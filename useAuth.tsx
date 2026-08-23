@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { UserProfile, BloodGroup } from '../types';
-import { getSupabase, getSupabaseConfig } from '../lib/supabase';
+import { getSupabase, getSupabaseConfig } from './lib/supabase';
 
 interface AuthContextType {
   user: any | null;
