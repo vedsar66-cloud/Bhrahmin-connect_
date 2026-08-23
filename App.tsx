@@ -8,30 +8,28 @@ import {
   INITIAL_ANNOUNCEMENTS, 
   INITIAL_BLOOD_REQUESTS 
 } from './lib/mockData';
-import { Navbar } from './components/Navbar';
-import { BottomNav } from './components/BottomNav';
-import { HomeView } from './views/HomeView';
-import { DirectoryView } from './views/DirectoryView';
-import { BloodBankView } from './views/BloodBankView';
-import { BusinessView } from './views/BusinessView';
-import { ProfileView } from './views/ProfileView';
-import { AuthModal } from './components/AuthModal';
-import { EmergencySOSModal } from './components/EmergencySOSModal';
-import { MemberDetailModal } from './components/MemberDetailModal';
-import { AddMemberModal } from './components/AddMemberModal';
-import { RegisterBusinessModal } from './components/RegisterBusinessModal';
-import { PWAInstallBanner } from './components/PWAInstallBanner';
-import { useAuth } from './hooks/useAuth';
+import { Navbar } from './Navbar';
+import { BottomNav } from './BottomNav';
+import { HomeView } from './HomeView';
+import { DirectoryView } from './DirectoryView';
+import { BloodBankView } from './BloodBankView';
+import { BusinessView } from './BusinessView';
+import { ProfileView } from './ProfileView';
+import { AuthModal } from './AuthModal';
+import { EmergencySOSModal } from './EmergencySOSModal';
+import { MemberDetailModal } from './MemberDetailModal';
+import { AddMemberModal } from './AddMemberModal';
+import { RegisterBusinessModal } from './RegisterBusinessModal';
+import { PWAInstallBanner } from './PWAInstallBanner';
+import { useAuth } from './useAuth';
 import { getSupabase } from './lib/supabase';
 
 export default function App() {
   const { t } = useTranslation();
   const { profile, isConfigured } = useAuth();
 
-  // Active Bottom Tab Navigation
   const [activeTab, setActiveTab] = useState<ActiveTab>('home');
 
-  // Check URL search params for deep linking (e.g. ?tab=blood)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const tabParam = params.get('tab') as ActiveTab;
@@ -40,7 +38,6 @@ export default function App() {
     }
   }, []);
 
-  // Data Collections with offline persistent storage
   const [members, setMembers] = useState<DirectoryMember[]>(() => {
     const saved = localStorage.getItem('samaj_directory_members');
     return saved ? JSON.parse(saved) : INITIAL_DIRECTORY_MEMBERS;
@@ -64,14 +61,12 @@ export default function App() {
   const [announcements] = useState<Announcement[]>(INITIAL_ANNOUNCEMENTS);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Modals state
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [isSOSOpen, setIsSOSOpen] = useState(false);
   const [isAddMemberOpen, setIsAddMemberOpen] = useState(false);
   const [isRegisterBizOpen, setIsRegisterBizOpen] = useState(false);
   const [selectedMember, setSelectedMember] = useState<DirectoryMember | null>(null);
 
-  // PWA Install prompt state
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
 
   useEffect(() => {
@@ -98,13 +93,11 @@ export default function App() {
     }
   };
 
-  // Sync state to localStorage & Supabase if configured
   const handleAddMember = async (newMember: DirectoryMember) => {
     const updated = [newMember, ...members];
     setMembers(updated);
     localStorage.setItem('samaj_directory_members', JSON.stringify(updated));
 
-    // If also marked as donor, add to donors
     if (newMember.isDonor) {
       const newDonor: BloodDonor = {
         id: `donor-${Date.now()}`,
@@ -217,8 +210,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-100 flex flex-col font-sans">
-      
-      {/* 1. Sticky Top Navigation Header */}
       <Navbar
         onOpenSOS={() => setIsSOSOpen(true)}
         onOpenAuth={() => setIsAuthOpen(true)}
@@ -226,16 +217,12 @@ export default function App() {
         onInstallPWA={handleInstallPWA}
       />
 
-      {/* 2. Main Mobile Screen Container */}
       <main className="flex-1 max-w-lg w-full mx-auto p-3 sm:p-4">
-        
-        {/* PWA Install Banner */}
         <PWAInstallBanner
           deferredPrompt={deferredPrompt}
           onInstall={handleInstallPWA}
         />
 
-        {/* Tab Views */}
         {activeTab === 'home' && (
           <HomeView
             setActiveTab={setActiveTab}
@@ -305,14 +292,12 @@ export default function App() {
         )}
       </main>
 
-      {/* 3. Fixed Native Bottom Navigation Bar */}
       <BottomNav
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         urgentBloodCount={urgentBloodCount}
       />
 
-      {/* 4. Modals & Drawers */}
       <AuthModal
         isOpen={isAuthOpen}
         onClose={() => setIsAuthOpen(false)}
@@ -340,7 +325,6 @@ export default function App() {
         onClose={() => setIsRegisterBizOpen(false)}
         onRegisterBusiness={handleRegisterBusiness}
       />
-
     </div>
   );
 }
