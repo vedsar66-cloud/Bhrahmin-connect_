@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import { DirectoryMember, BloodGroup } from '../types';
 import { GOTRAS_LIST, VILLAGES_LIST } from './lib/mockData';
-import { SkeletonMemberCard } from '../components/SkeletonLoader';
+import { SkeletonMemberCard } from './SkeletonLoader';
 
 interface DirectoryViewProps {
   members: DirectoryMember[];
