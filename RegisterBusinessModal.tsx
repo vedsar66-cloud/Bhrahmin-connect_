@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { X, Briefcase, Tag, Phone, Globe, MapPin, Sparkles } from 'lucide-react';
 import { Business, BusinessCategory } from '../types';
-import { VILLAGES_LIST } from '../lib/mockData';
+import { VILLAGES_LIST } from './lib/mockData';
 import { AvatarUpload } from './AvatarUpload';
 
 interface RegisterBusinessModalProps {
