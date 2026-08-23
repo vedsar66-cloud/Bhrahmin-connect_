@@ -15,7 +15,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { DirectoryMember, BloodGroup } from '../types';
-import { GOTRAS_LIST, VILLAGES_LIST } from '../lib/mockData';
+import { GOTRAS_LIST, VILLAGES_LIST } from './lib/mockData';
 import { SkeletonMemberCard } from '../components/SkeletonLoader';
 
 interface DirectoryViewProps {
